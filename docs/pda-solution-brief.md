@@ -1,8 +1,6 @@
 # Solution Brief
 
-> **EN:** Source of truth for the solution. AI agents verify but never modify. Every component must trace to the Problem Statement.
->
-> **ES:** Fuente de verdad de la solución. Los agentes IA verifican pero nunca modifican. Cada componente debe tener trazabilidad al Problem Statement.
+> Source of truth for the solution. AI agents verify but never modify. Every component must trace to the Problem Statement.
 
 **Status:** DRAFT | UNDER REVIEW | APPROVED
 **Version:** 0.1
@@ -12,36 +10,34 @@
 
 ---
 
-## 1. Solution Summary / Resumen de la solución
+## 1. Solution Summary
 
-*EN: One paragraph. What it does, for whom. Reference the PS gap.*
-*ES: Un párrafo. Qué hace, para quién. Referenciar la brecha del PS.*
+*One paragraph. What it does, for whom. Reference the PS gap.*
 
 **gap_ref:** PS element 1
 **success_ref:** PS element 3
 
 ---
 
-## 2. Proposed Solution / Solución propuesta
+## 2. Proposed Solution
 
-*EN: Complete functional description. User perspective first, then system.*
-*ES: Descripción funcional completa. Perspectiva del usuario primero, luego del sistema.*
+*Complete functional description. User perspective first, then system.*
 
 ---
 
-## 3. Key Decisions / Decisiones clave
+## 3. Key Decisions
 
-| Decision / Decisión | Options / Opciones | Chosen / Elegida | Rationale / Justificación |
+| Decision | Options | Chosen | Rationale |
 |---|---|---|---|
 | | | | |
 
 ---
 
-## 4. Solution Dimensions / Dimensiones de la solución
+## 4. Solution Dimensions
 
-### Business / Negocio
+### Business
 
-| Component / Componente | Description / Descripción | gap_ref | success_ref | Priority / Prioridad |
+| Component | Description | gap_ref | success_ref | Priority |
 |---|---|---|---|---|
 | | | PS element # | PS criterion # | Must / Should / Could |
 
@@ -49,67 +45,67 @@
 
 ---
 
-## 5. Assumptions and Risks / Supuestos y riesgos
+## 5. Assumptions and Risks
 
-| ID | Assumption / Supuesto | Source / Fuente | Risk / Riesgo | Constraint / Restricción | Status / Estado |
+| ID | Assumption | Source | Risk | Constraint | Status |
 |---|---|---|---|---|---|
 | A-001 | | PS / New | High/Med/Low | [if active] | Active/Confirmed/Disproven |
 
 ---
 
-## 6. Success Criteria / Criterios de éxito
+## 6. Success Criteria
 
-### Global (from PS / del PS)
-| PS Criterion / Criterio | Metric / Métrica | Target / Objetivo | Components / Componentes |
+### Global (from PS)
+| PS Criterion | Metric | Target | Components |
 |---|---|---|---|
 | | | | |
 
-### Per Component / Por componente
-| Component / Componente | Criterion / Criterio | Metric / Métrica | Target / Objetivo |
+### Per Component
+| Component | Criterion | Metric | Target |
 |---|---|---|---|
 | | | | |
 
 ---
 
-## 7. Constraints / Restricciones
+## 7. Constraints
 
-### Technical / Técnicas
+### Technical
 - [constraint + source + reason]
 
-### Business / Negocio
+### Business
 - [constraint + source + reason]
 
-### Regulatory / Regulatorias
+### Regulatory
 - [constraint + source + reason]
 
 ---
 
-## 8. Translatability Map / Mapa de traducibilidad
+## 8. Translatability Map
 
-| Dimension / Dimensión | Rating / Calificación | Issues / Problemas | Action / Acción |
+| Dimension | Rating | Issues | Action |
 |---|---|---|---|
-| Business / Negocio | Sufficient / Needs refinement / Insufficient | | |
-| Constraints / Restricciones | | | |
-| Success criteria / Criterios de éxito | | | |
+| Business | Sufficient / Needs refinement / Insufficient | | |
+| Constraints | | | |
+| Success criteria | | | |
 
-**Ratings / Calificaciones:**
-- **Sufficient / Suficiente** — AI can execute without inventing
-- **Needs refinement / Necesita refinamiento** — Ambiguous areas exist
-- **Insufficient / Insuficiente** — AI would need to invent; blocks Gate 2
+**Ratings:**
+- **Sufficient** — AI can execute without inventing
+- **Needs refinement** — Ambiguous areas exist
+- **Insufficient** — AI would need to invent; blocks Gate 2
 
 ---
 
-## Actor Map / Mapa de actores
+## Actor Map
 
-| Actor | Problem relation / Relación con problema | Solution relation / Relación con solución | Authority / Autoridad |
+| Actor | Problem relation | Solution relation | Authority |
 |---|---|---|---|
 | | | | Approves / Informs / None |
 
 ---
 
-## Decision Matrix / Matriz de decisión
+## Decision Matrix
 
-| Criterion / Criterio | Weight / Peso | Option A | Option B | Option C |
+| Criterion | Weight | Option A | Option B | Option C |
 |---|---|---|---|---|
 | | | | | |
 | **Total** | | | | |
@@ -118,6 +114,6 @@
 
 ## Feedback Log
 
-| Date / Fecha | Source / Fuente | Feedback | Action / Acción | Status / Estado |
+| Date | Source | Feedback | Action | Status |
 |---|---|---|---|---|
 | | | | | Open / Resolved |
