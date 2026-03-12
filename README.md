@@ -1,30 +1,55 @@
-# Problem-Driven AI × Spec Kit — Toolkit V1
+# Problem-Driven AI — Toolkit V1
 
 > **Think first. Build second. Let the AI execute what humans decided.**
 >
 > **Piensa primero. Construye después. Deja que la IA ejecute lo que los humanos decidieron.**
 
-An open-source toolkit that connects [Problem-Driven AI](https://problemdriven.ai) with [GitHub Spec Kit](https://github.com/github/spec-kit). Two AI verification agents ensure that everything the AI builds traces back to a real, validated problem.
+An open-source toolkit that implements the [Problem-Driven AI](https://problemdriven.ai) methodology. Four AI agents guide you from research evidence to working code, ensuring everything built traces back to a validated problem.
 
-Un toolkit open-source que conecta [Problem-Driven AI](https://problemdriven.ai) con [GitHub Spec Kit](https://github.com/github/spec-kit). Dos agentes de verificación IA garantizan que todo lo que la IA construye tiene trazabilidad a un problema real y validado.
+Un toolkit open-source que implementa la metodología [Problem-Driven AI](https://problemdriven.ai). Cuatro agentes IA te guían desde evidencia de investigación hasta código funcional, garantizando que todo lo construido tiene trazabilidad a un problema validado.
 
 ---
 
 ## What This Solves / Qué resuelve
 
-**EN:** Spec Kit turns specifications into code. But it starts *after* the thinking is done. It assumes you already know what to build and why. Problem-Driven AI fills that gap: it structures the human thinking that must happen *before* any specification exists. This toolkit connects both systems.
+**EN:** AI coding agents are powerful builders, but they need to know *what* to build and *why*. Problem-Driven AI fills that gap: it structures the human thinking that must happen before any code exists, then translates those decisions into context the AI can execute from — without inventing.
 
-**ES:** Spec Kit convierte especificaciones en código. Pero empieza *después* de que el pensamiento esté hecho. Asume que ya sabes qué construir y por qué. Problem-Driven AI llena ese vacío: estructura el pensamiento humano que debe ocurrir *antes* de que exista cualquier especificación. Este toolkit conecta ambos sistemas.
+**ES:** Los agentes de código IA son constructores potentes, pero necesitan saber *qué* construir y *por qué*. Problem-Driven AI llena ese vacío: estructura el pensamiento humano que debe ocurrir antes de que exista cualquier código, y luego traduce esas decisiones en contexto que la IA puede ejecutar — sin inventar.
 
 ```
-Phases 1–2:  Human thinking, verified by PDA agents
-Phase 3:     PDA adapter translates into Spec Kit inputs
-Phase 4:     Spec Kit builds, PDA agents verify fidelity
+Phase 1:  Human defines the problem      → /pda-problem
+Phase 2:  Human defines the solution      → /pda-solution
+Phase 3:  Human defines the how           → /pda-context
+Phase 4:  AI builds, verifies, delivers   → /pda-ai-build
 
-Fases 1–2:   Pensamiento humano, verificado por agentes PDA
-Fase 3:       El adaptador PDA traduce a inputs de Spec Kit
-Fase 4:       Spec Kit construye, agentes PDA verifican fidelidad
+Fase 1:   Humano define el problema       → /pda-problem
+Fase 2:   Humano define la solución       → /pda-solution
+Fase 3:   Humano define el cómo           → /pda-context
+Fase 4:   IA construye, verifica, entrega → /pda-ai-build
 ```
+
+---
+
+## The Four Agents / Los cuatro agentes
+
+| Agent | Phase | What it does / Qué hace |
+|---|---|---|
+| `pda-problem` | 1 | Reads research evidence, generates a Problem Statement with 9 elements, validates every claim against evidence, asks human to approve. / Lee evidencia de investigación, genera un Problem Statement con 9 elementos, valida cada afirmación contra evidencia, pide aprobación humana. |
+| `pda-solution` | 2 | Reads the approved PS, generates a Solution Brief with business decisions only (no tech stack), validates traceability, asks human to approve. / Lee el PS aprobado, genera una Solution Brief solo con decisiones de negocio (sin stack técnico), valida trazabilidad, pide aprobación humana. |
+| `pda-context` | 3 | Reads PS + SB, generates a Context Specification with all technical decisions (stack, architecture, data model, accessibility, error handling), asks human to approve. / Lee PS + SB, genera una Context Specification con todas las decisiones técnicas, pide aprobación humana. |
+| `pda-ai-build` | 4 | Reads all three documents, generates spec → plan → tasks → code, verifies each step, stops if any check fails. / Lee los tres documentos, genera spec → plan → tasks → código, verifica cada paso, para si alguna verificación falla. |
+
+---
+
+## Why Two Documents Instead of One / Por qué dos documentos en vez de uno
+
+The **Solution Brief** defines *what* to build and *why* — product decisions, business components, success criteria, constraints.
+
+The **Context Specification** defines *how* to build it — stack, architecture, data model, interaction patterns, visual design, accessibility.
+
+**En proyectos pequeños** puede parecer redundante: la misma persona piensa el qué y el cómo. Pero la separación tiene valor incluso ahí: obliga a tomar decisiones técnicas *después* de haber definido el producto, no al mismo tiempo.
+
+**En proyectos grandes** los escribe gente distinta: producto define la SB, ingeniería define la Context Spec. La separación evita que decisiones técnicas contaminen el diseño de producto, y viceversa.
 
 ---
 
@@ -32,11 +57,12 @@ Fase 4:       Spec Kit construye, agentes PDA verifican fidelidad
 
 | Actor | Type / Tipo | Phases / Fases | Role / Rol |
 |---|---|---|---|
-| Human (team) | Person | 1, 2 | Investigates, synthesizes, decides / Investiga, sintetiza, decide |
-| `pda-problem-validator` | AI Agent | 1–4 | Verifies against evidence and Problem Statement / Verifica contra evidencia y Problem Statement |
-| `pda-solution-brief` | AI Agent | 2–3 | Verifies coverage and translatability / Verifica cobertura y traducibilidad |
-| Spec Kit | Toolkit | 3–4 | Generates technical artifacts / Genera artefactos técnicos |
-| Human (Context Engineer) | Person | 3–4 | Operates adapter, reviews outputs / Opera el adaptador, revisa outputs |
+| Product team | Person | 1, 2 | Operates `/pda-problem` and `/pda-solution`. Investigates, synthesizes, decides the what and why. / Opera `/pda-problem` y `/pda-solution`. Investiga, sintetiza, decide el qué y por qué. |
+| Context Engineer | Person | 3, 4 | Operates `/pda-context` and supervises `/pda-ai-build`. Translates product decisions into technical specs, reviews built output. / Opera `/pda-context` y supervisa `/pda-ai-build`. Traduce decisiones de producto en specs técnicas, revisa el output construido. |
+| `pda-problem` | AI Agent | 1 | Generates and validates the Problem Statement / Genera y valida el Problem Statement |
+| `pda-solution` | AI Agent | 2 | Generates and validates the Solution Brief / Genera y valida la Solution Brief |
+| `pda-context` | AI Agent | 3 | Generates the Context Specification / Genera la Context Specification |
+| `pda-ai-build` | AI Agent | 4 | Builds and verifies code / Construye y verifica código |
 
 ---
 
@@ -44,47 +70,34 @@ Fase 4:       Spec Kit construye, agentes PDA verifican fidelidad
 
 ### Prerequisites / Prerrequisitos
 
-- An AI coding agent / Un agente de código IA: [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [GitHub Copilot](https://github.com/features/copilot), [Cursor](https://cursor.sh), or any Spec Kit-compatible agent
-- [Spec Kit CLI](https://github.com/github/spec-kit): `uv tool install specify-cli --from git+https://github.com/github/spec-kit.git`
+- An AI coding agent / Un agente de código IA: [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [GitHub Copilot](https://github.com/features/copilot), [Cursor](https://cursor.sh)
 
 ### Setup
 
 ```bash
 git clone https://github.com/problemdriven/pda-toolkit.git my-project
 cd my-project
-
-# Initialize Spec Kit with your AI agent
-specify init --here --ai claude      # Claude Code
-specify init --here --ai copilot     # GitHub Copilot
-specify init --here --ai cursor      # Cursor
-
-# The repo includes a complete example project (SaaS onboarding).
-# To start fresh with empty templates:
-cp docs/templates/pda-problem.template.md docs/pda-problem.md
-cp docs/templates/pda-solution-brief.template.md docs/pda-solution-brief.md
 ```
 
 ### The Flow / El flujo
 
 ```
 PHASE 1 — PROBLEM
-  Fill docs/pda-problem.md → /pda.validate-problem → Gate 1
+  /pda-problem → generates + validates PS → human approves → Gate 1
 
 PHASE 2 — SOLUTION
-  Fill docs/pda-solution-brief.md → /pda.validate-solution → Gate 2
+  /pda-solution → generates + validates SB (business only) → human approves → Gate 2
 
-PHASE 3 — CONTEXT (PDA → Spec Kit adapter)
-  /pda.adapt-constitution  →  .specify/memory/constitution.md
-  /pda.adapt-specify       →  prepare inputs → /speckit.specify
-  /pda.verify-specify      →  traceability check
-  /speckit.plan            →  /pda.verify-plan
-  /speckit.tasks           →  /pda.verify-tasks
+PHASE 3 — CONTEXT
+  /pda-context → generates Context Spec (technical) → human approves → Gate 3
 
 PHASE 4 — BUILD
-  /speckit.implement       →  /pda.verify-build
+  /pda-ai-build → constitution → spec → plan → tasks → code → verify → Gate 4
 ```
 
-**Slash commands** work in Claude Code (`.claude/commands/`), GitHub Copilot (`.github/prompts/`), and Cursor (`.cursor/rules/`).
+See `docs/QUICKSTART.md` for detailed step-by-step instructions.
+
+**Agents** are available for Claude Code (`.claude/agents/`), GitHub Copilot (`.github/prompts/`), and Cursor (`.cursor/rules/`).
 
 ---
 
@@ -93,54 +106,43 @@ PHASE 4 — BUILD
 ```
 your-project/
 ├── docs/
-│   ├── pda-problem.md                  ← Problem Statement (example included)
-│   ├── pda-solution-brief.md           ← Solution Brief (example included)
-│   ├── templates/                      ← Empty templates to start fresh
-│   │   ├── pda-problem.template.md
-│   │   └── pda-solution-brief.template.md
-│   ├── examples/                       ← Completed example (SaaS onboarding)
-│   │   ├── pda-problem-example.md
-│   │   └── pda-solution-brief-example.md
+│   ├── pda-problem.md                  ← Problem Statement (9 elements)
+│   ├── pda-solution-brief.md           ← Solution Brief (business decisions)
+│   ├── pda-context-spec.md             ← Context Specification (technical decisions)
 │   └── QUICKSTART.md                   ← Step-by-step guide (EN+ES)
 │
-├── .pda/
-│   ├── agents/
-│   │   ├── pda-problem-validator.md    ← 11 rules, 7 skills
-│   │   └── pda-solution-brief.md       ← 8 rules, 3 skills
-│   ├── scripts/
-│   │   └── adapter.md                  ← PDA → Spec Kit translation guide
-│   └── templates/
-│       └── verify-report.template.md
+├── templates/
+│   ├── pda-problem.template.md         ← Empty PS template
+│   ├── pda-solution-brief.template.md  ← Empty SB template
+│   └── pda-context-spec.template.md    ← Empty Context Spec template
 │
-├── .specify/                           ← Spec Kit directory
-│   └── memory/
-│       └── constitution.md             ← Generated by /pda.adapt-constitution
+├── .claude/agents/                     ← Claude Code agents
+│   ├── pda-problem.md
+│   ├── pda-solution.md
+│   ├── pda-context.md
+│   └── pda-ai-build.md
 │
-├── .claude/commands/                   ← Claude Code slash commands
-├── .github/prompts/                    ← GitHub Copilot slash commands
+├── .github/prompts/                    ← GitHub Copilot prompts
+│   ├── pda-problem.md
+│   ├── pda-solution.md
+│   ├── pda-context.md
+│   └── pda-ai-build.md
+│
 ├── .cursor/rules/                      ← Cursor rules
+│   ├── pda-problem.mdc
+│   ├── pda-solution.mdc
+│   ├── pda-context.mdc
+│   └── pda-ai-build.mdc
+│
+├── .specify/                           ← Spec Kit artifacts (generated by /pda-ai-build)
+│   ├── memory/constitution.md
+│   └── specs/001-feature/
 │
 ├── pda-verification/                   ← Verification reports (generated)
 ├── CLAUDE.md                           ← Claude Code instructions
 ├── AGENTS.md                           ← Copilot / generic agent instructions
 └── README.md
 ```
-
----
-
-## PDA Agents / Agentes PDA
-
-### `pda-problem-validator`
-
-**EN:** The Problem Statement guardian. It never generates insights — only verifies that what humans documented is evidence-based, complete, and consistent. 11 rules, 7 skills, operates across Phases 1–4.
-
-**ES:** El guardián del Problem Statement. Nunca genera insights: solo verifica que lo que los humanos documentaron está basado en evidencia, es completo y consistente. 11 reglas, 7 skills, opera en Fases 1–4.
-
-### `pda-solution-brief`
-
-**EN:** The Solution Brief guardian. Ensures every component traces back to the problem and that the brief is precise enough for AI translation. 8 rules, 3 skills, operates in Phases 2–3.
-
-**ES:** El guardián de la Solution Brief. Garantiza que cada componente tiene trazabilidad al problema y que el brief es lo suficientemente preciso para traducción IA. 8 reglas, 3 skills, opera en Fases 2–3.
 
 ---
 
@@ -151,44 +153,47 @@ your-project/
 - 9 PS elements present and complete / 9 elementos del PS presentes y completos
 - Each element cites evidence / Cada elemento cita evidencia
 - No unresolved contradictions / Sin contradicciones sin resolver
-- Stakeholder approval / Aprobación de stakeholders
+- Human approval / Aprobación humana
 
 ### Gate 2: Solution → Context
 
-- Solution Brief complete (8 sections) / Solution Brief completa (8 secciones)
-- Solution validated with users / Solución validada con usuarios
+- Solution Brief complete (business decisions only) / Solution Brief completa (solo decisiones de negocio)
+- Every component has `gap_ref` + `success_ref` to PS / Cada componente tiene trazabilidad al PS
 - Translatability map: no insufficient dimensions / Mapa de traducibilidad: sin dimensiones insuficientes
-- Team consensus verified / Consenso del equipo verificado
+- Human approval / Aprobación humana
 
 ### Gate 3: Context → Build
 
-- All `verify-*.md` reports pass / Todos los informes `verify-*.md` pasan
-- Human approval of spec, plan, and tasks / Aprobación humana de spec, plan y tasks
+- Context Specification complete (all technical decisions) / Context Specification completa (todas las decisiones técnicas)
+- Every technical decision justified against SB constraint or component / Cada decisión técnica justificada contra restricción o componente de la SB
+- Human approval / Aprobación humana
 
 ### Gate 4: Build → Market
 
-- `verify-build.md` confirms fidelity to PS gap / confirma fidelidad a la brecha del PS
+- All verification reports pass / Todos los informes de verificación pasan
+- Output addresses the PS gap / El output aborda la brecha del PS
 - Success criteria verifiable in output / Criterios de éxito verificables en el output
+- Human approval / Aprobación humana
 
 ---
 
 ## Multi-Agent Support / Soporte multi-agente
 
-| Agent | Commands location | Setup |
+| Agent | Location | Format |
 |---|---|---|
-| Claude Code | `.claude/commands/pda.*.md` | `specify init --here --ai claude` |
-| GitHub Copilot | `.github/prompts/pda-*.md` | `specify init --here --ai copilot` |
-| Cursor | `.cursor/rules/pda-*.mdc` | `specify init --here --ai cursor` |
+| Claude Code | `.claude/agents/pda-*.md` | Agents with frontmatter |
+| GitHub Copilot | `.github/prompts/pda-*.md` | Prompt files |
+| Cursor | `.cursor/rules/pda-*.mdc` | Rule files with frontmatter |
 
-All agents use the same PDA agent definitions (`.pda/agents/`) and adapter (`.pda/scripts/adapter.md`). Only the command format differs.
+All formats encode the same behavior. The Claude Code agents (`.claude/agents/`) are the canonical source.
 
 ---
 
 ## Included Example / Ejemplo incluido
 
-The `docs/` directory ships with a fully worked example: a **SaaS onboarding optimization** project with completed Problem Statement and Solution Brief. Run `/pda.validate-problem` and `/pda.validate-solution` to see the agents in action.
+The `example/` directory contains a fully worked project: **TeamTasks**, a shared task list for small teams. It includes research evidence, a completed Problem Statement, Solution Brief, and Context Specification. Use it to see the full PDA flow in action.
 
-El directorio `docs/` incluye un ejemplo completo: un proyecto de **optimización de onboarding SaaS** con Problem Statement y Solution Brief terminados. Ejecuta `/pda.validate-problem` y `/pda.validate-solution` para ver los agentes en acción.
+El directorio `example/` contiene un proyecto completamente trabajado: **TeamTasks**, una lista de tareas compartida para equipos pequeños. Incluye evidencia de investigación, Problem Statement, Solution Brief y Context Specification completados. Úsalo para ver el flujo completo de PDA en acción.
 
 ---
 
@@ -210,10 +215,10 @@ Learn more at [problemdriven.ai](https://problemdriven.ai).
 
 | Version | Trigger | Added |
 |---|---|---|
-| **V1** (current) | — | 2 PDA agents + Spec Kit adapter |
-| **V2** | Quality gaps in V1 | `pda-context-validator`, formal Gate 3 |
+| **V1** (current) | — | 4 PDA agents (problem, solution, context, ai-build) |
+| **V2** | Quality gaps in V1 | Context validation agent, formal Gate 3 checks |
 | **V3** | Product in market | `pda-market-monitor`, Phase 5 artifacts |
-| **V4** | Spec Kit doesn't scale | Custom PDA generators |
+| **V4** | Scale needs | Custom PDA generators |
 
 ---
 
