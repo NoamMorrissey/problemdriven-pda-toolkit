@@ -114,12 +114,16 @@ See [docs/EXAMPLE.md](docs/EXAMPLE.md) for a full walkthrough.
 
 ## 🗺️ Roadmap
 
-| Version | Trigger | What's Added |
+Each version is triggered by real usage, not by a calendar.
+
+| Version | Trigger | What's added |
 |---|---|---|
-| **V1** (current) | — | 4 PDA agents (problem, solution, context, ai-build) |
-| **V2** | Quality gaps in V1 | Context validation agent, formal Gate 3 checks |
-| **V3** | Product in market | `pda-market-monitor`, Phase 5 artifacts |
-| **V4** | Scale needs | Custom PDA generators |
+| **V1** (current) | — | 4 PDA agents (`pda-problem`, `pda-solution`, `pda-context`, `pda-ai-build`), Problem → Build flow, TeamTasks example, multi-agent support (Claude Code, Copilot, Cursor) |
+| **V2** | V1 used on a real project with real users | **Phase 5: Market closes the loop.** `pda-market-monitor` agent classifies real user signals, connects them to Problem Statement assumptions, and proposes context updates. Signals can reopen Phase 1, 2, or 3. New artifacts: Signal Log, Iteration Brief, Context Update Record. |
+| **V3** | Gaps in Context Specification quality detected in V1-V2 | **Solid foundations.** Context Specification evolves into a standardized pattern with required/optional sections by project type. Google Docs integration (agents read/write directly). Formal Gate 3 with real exit criteria. |
+| **V4** | Static evidence files become a bottleneck | **Living evidence.** Real RAG connection (NotebookLM, Notion, or similar). Evidence is a live system the agent queries, not a static file. Automatic obsolescence detection for evidence older than 6 months. |
+| **V5** | Non-technical teams blocked by terminal requirement | **Web experience.** Web interface for Phases 1-2 where product and business teams write and approve Problem Statement and Solution Brief without a terminal. Technical team continues using Claude Code for Phases 3-4. Shared artifacts. |
+| **V6** | Demand for unified experience across all roles | **Full platform.** Phases 1-5 in a unified interface. Business and technical teams in the same system. Visual traceability dashboard from problem to code to market signals. |
 
 ---
 
