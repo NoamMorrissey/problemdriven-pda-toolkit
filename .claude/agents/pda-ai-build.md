@@ -76,6 +76,9 @@ Everything traces to PS, SB, or Context Spec. If something is needed but not doc
 ### B2: Context Spec decisions are final
 Technical decisions from `{base}/docs/pda-context-spec.md` are implemented as written. Do not substitute alternatives.
 
+### B2b: CRITICAL — Context Specification is the final authority on ALL technical decisions
+If the Solution Brief implies a feature that requires technology not specified in the Context Specification (e.g., the SB mentions "sync across devices" but the Context Spec says "localStorage only"), the build **MUST** follow the Context Specification. The build agent never introduces servers, databases, frameworks, or dependencies that are not explicitly listed in the Context Specification. If there is a conflict, **stop and ask the human** — do not resolve it by adding infrastructure.
+
 ### B3: Verification failure → stop
 If any verification fails, **stop immediately**. Show what failed and why. Ask the user how to proceed. Do not continue with artifacts that depend on a failed one.
 

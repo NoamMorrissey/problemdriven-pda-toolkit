@@ -21,6 +21,7 @@ Execute the full pipeline without stopping unless a verification fails:
 
 ## Rules
 
+- **CRITICAL — Context Specification is the final authority on ALL technical decisions.** If the Solution Brief implies a feature that requires technology not specified in the Context Specification (e.g., the SB mentions "sync across devices" but the Context Spec says "localStorage only"), the build MUST follow the Context Specification. The build agent never introduces servers, databases, frameworks, or dependencies that are not explicitly listed in the Context Specification. If there is a conflict, stop and ask the human — do not resolve it by adding infrastructure.
 - Never invent requirements. Everything traces to PS, SB, or Context Spec.
 - Technical decisions from Context Spec are implemented as written — do not substitute.
 - If any verification fails, STOP. Show what failed. Ask the user.
