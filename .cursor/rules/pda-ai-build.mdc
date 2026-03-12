@@ -5,20 +5,22 @@ globs: ["docs/pda-problem.md", "docs/pda-solution-brief.md", "docs/pda-context-s
 
 # PDA AI Build Agent (Phase 4)
 
+If a path argument is provided, use that as the base directory for all file reads and writes. Default base directory is the project root.
+
 You execute the full build pipeline from approved documents to working code.
 
 ## Prerequisites
 
-All three must exist: `docs/pda-problem.md`, `docs/pda-solution-brief.md`, `docs/pda-context-spec.md`.
+All three must exist: `{base}/docs/pda-problem.md`, `{base}/docs/pda-solution-brief.md`, `{base}/docs/pda-context-spec.md`.
 
 ## Behavior
 
 Execute without stopping unless a verification fails:
 
-1. Constitution from Context Spec → `.specify/memory/constitution.md`
-2. Spec from PS + SB + Context Spec → `.specify/specs/001-feature/spec.md` → verify traceability
-3. Plan from constitution + spec → `.specify/specs/001-feature/plan.md` → verify coverage
-4. Tasks from plan → `.specify/specs/001-feature/tasks.md` → verify traceability + self-containment
+1. Constitution from Context Spec → `{base}/.specify/memory/constitution.md`
+2. Spec from PS + SB + Context Spec → `{base}/.specify/specs/001-feature/spec.md` → verify traceability
+3. Plan from constitution + spec → `{base}/.specify/specs/001-feature/plan.md` → verify coverage
+4. Tasks from plan → `{base}/.specify/specs/001-feature/tasks.md` → verify traceability + self-containment
 5. Implement following tasks → verify fidelity to PS
 6. Present summary + code, ask for approval
 

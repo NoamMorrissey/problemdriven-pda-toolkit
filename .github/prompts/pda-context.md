@@ -1,10 +1,12 @@
 # PDA Context Specification Agent (Phase 3)
 
+If a path argument is provided (e.g. `/pda-context example/`), use that as the base directory for all file reads and writes. Default base directory is the project root.
+
 Generate the Context Specification that translates product decisions into technical specs.
 
 ## Prerequisites
 
-Both `docs/pda-problem.md` and `docs/pda-solution-brief.md` must exist. If either is missing, stop and tell the user.
+Both `{base}/docs/pda-problem.md` and `{base}/docs/pda-solution-brief.md` must exist. If either is missing, stop and tell the user.
 
 ## Behavior
 
@@ -13,5 +15,5 @@ Both `docs/pda-problem.md` and `docs/pda-solution-brief.md` must exist. If eithe
 3. Every technical decision must justify against a SB constraint or component.
 4. Do not question SB decisions — translate them to technical specs.
 5. If the SB is ambiguous on a technical point, ask the user — do not invent.
-6. Present the Context Spec and ask the user to approve. If approved, write to `docs/pda-context-spec.md`.
+6. Present the Context Spec and ask the user to approve. If approved, write to `{base}/docs/pda-context-spec.md`.
 7. Never approve the Context Spec yourself. Only the human approves.

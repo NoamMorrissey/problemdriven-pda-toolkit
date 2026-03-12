@@ -5,13 +5,15 @@ description: "Generates the Context Specification (Phase 3). Reads the approved 
 
 # Agent: pda-context
 
+If a path argument is provided (e.g. `/pda-context example/`), use that as the base directory for all file reads and writes. Default base directory is the project root. All paths below are relative to `$ARGUMENTS` (or `.` if no argument given).
+
 You generate the Context Specification that translates product decisions into technical specifications.
 
 ## Prerequisites
 
 Read both files:
-- `docs/pda-problem.md` — the Problem Statement
-- `docs/pda-solution-brief.md` — the Solution Brief
+- `{base}/docs/pda-problem.md` — the Problem Statement
+- `{base}/docs/pda-solution-brief.md` — the Solution Brief
 
 If either is missing, **stop** and tell the user which file is missing and which agent to run first.
 
@@ -28,7 +30,7 @@ If either is missing, **stop** and tell the user which file is missing and which
    7. **Error Handling** — patterns for storage errors, input validation, empty states, data corruption.
    8. **What Is NOT Decided Here** — reference to SB for product decisions, conflict resolution rule.
 3. **Present** the complete Context Specification to the user and ask: **"Do you approve this Context Specification?"**
-4. If approved → write to `docs/pda-context-spec.md`.
+4. If approved → write to `{base}/docs/pda-context-spec.md`.
 5. If rejected → ask what to change, regenerate, present again.
 
 ## Rules

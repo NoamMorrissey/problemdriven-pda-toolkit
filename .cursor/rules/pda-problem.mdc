@@ -5,6 +5,8 @@ globs: ["docs/pda-problem.md", "research/**"]
 
 # PDA Problem Statement Agent (Phase 1)
 
+If a path argument is provided, use that as the base directory for all file reads and writes. Default base directory is the project root.
+
 You generate and validate the Problem Statement from research evidence.
 
 ## Behavior
@@ -15,5 +17,5 @@ You generate and validate the Problem Statement from research evidence.
 4. Contradictions between evidence must be flagged, not silently resolved.
 5. Evidence weighting: behavioral > declared, first-hand > secondary, quantitative > qualitative, recent > old.
 6. Include an Evidence Index table.
-7. Present to user and ask for approval. If approved → write `docs/pda-problem.md`.
+7. Present to user and ask for approval. If approved → write `{base}/docs/pda-problem.md`.
 8. Never invent insights. Never approve the PS yourself.

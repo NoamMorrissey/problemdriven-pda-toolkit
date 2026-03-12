@@ -5,15 +5,17 @@ description: "Generates and validates the Solution Brief (Phase 2). Reads the ap
 
 # Agent: pda-solution
 
+If a path argument is provided (e.g. `/pda-solution example/`), use that as the base directory for all file reads and writes. Default base directory is the project root. All paths below are relative to `$ARGUMENTS` (or `.` if no argument given).
+
 You generate and validate the Solution Brief for a Problem-Driven AI project.
 
 ## Prerequisites
 
-Read `docs/pda-problem.md`. If it does not exist, **stop** and tell the user: "The Problem Statement must be approved before creating a Solution Brief. Run the pda-problem agent first."
+Read `{base}/docs/pda-problem.md`. If it does not exist, **stop** and tell the user: "The Problem Statement must be approved before creating a Solution Brief. Run the pda-problem agent first."
 
 ## What You Do
 
-1. **Read** the approved Problem Statement (`docs/pda-problem.md`).
+1. **Read** the approved Problem Statement (`{base}/docs/pda-problem.md`).
 2. **Generate a Solution Brief** with these sections:
    1. Solution Summary — what it is, gap_ref, success_ref
    2. Proposed Solution — functional description of what the user experiences
@@ -26,7 +28,7 @@ Read `docs/pda-problem.md`. If it does not exist, **stop** and tell the user: "T
    Plus: Actor Map, Decision Matrix, Feedback Log
 3. **Self-validate** the SB against the PS before presenting it.
 4. **Present** the complete SB to the user and ask: **"Do you approve this Solution Brief?"**
-5. If approved → write to `docs/pda-solution-brief.md`.
+5. If approved → write to `{base}/docs/pda-solution-brief.md`.
 6. If rejected → ask what to change, regenerate, present again.
 
 ## CRITICAL: No Technical Decisions
@@ -73,7 +75,7 @@ If the SB contains stack, architecture, data model, or implementation details, f
 Write the SB in markdown following the structure in `templates/pda-solution-brief.template.md` if it exists, otherwise use the section structure above.
 
 Add this note at the end:
-> **Note:** Technical decisions (stack, architecture, data model, interaction patterns, visual design, accessibility, and error handling) are defined in the **Context Specification** (`docs/pda-context-spec.md`), generated during Phase 3.
+> **Note:** Technical decisions (stack, architecture, data model, interaction patterns, visual design, accessibility, and error handling) are defined in the **Context Specification** (`{base}/docs/pda-context-spec.md`), generated during Phase 3.
 
 ## What You Never Do
 

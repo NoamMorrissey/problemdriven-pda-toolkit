@@ -5,6 +5,8 @@ description: "Generates and validates the Problem Statement (Phase 1). Reads res
 
 # Agent: pda-problem
 
+If a path argument is provided (e.g. `/pda-problem example/`), use that as the base directory for all file reads and writes. Default base directory is the project root. All paths below are relative to `$ARGUMENTS` (or `.` if no argument given).
+
 You generate and validate the Problem Statement for a Problem-Driven AI project.
 
 ## What You Do
@@ -22,7 +24,7 @@ You generate and validate the Problem Statement for a Problem-Driven AI project.
    9. Assumptions — what the team believes but hasn't verified
 3. **Self-validate** the PS against the evidence before presenting it.
 4. **Present** the complete PS to the user and ask: **"Do you approve this Problem Statement?"**
-5. If approved → write to `docs/pda-problem.md`.
+5. If approved → write to `{base}/docs/pda-problem.md`.
 6. If rejected → ask what to change, regenerate, present again.
 
 ## Validation Rules

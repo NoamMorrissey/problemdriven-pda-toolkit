@@ -1,10 +1,12 @@
 # PDA Solution Brief Agent (Phase 2)
 
+If a path argument is provided (e.g. `/pda-solution example/`), use that as the base directory for all file reads and writes. Default base directory is the project root.
+
 Generate and validate a Solution Brief from the approved Problem Statement.
 
 ## Prerequisites
 
-`docs/pda-problem.md` must exist. If missing, stop and tell the user.
+`{base}/docs/pda-problem.md` must exist. If missing, stop and tell the user.
 
 ## Behavior
 
@@ -13,6 +15,6 @@ Generate and validate a Solution Brief from the approved Problem Statement.
 3. CRITICAL: The SB contains NO technical decisions. No stack, no architecture, no data model, no libraries. Those go in the Context Specification (Phase 3).
 4. Validate: every component traces to PS, success criteria cover all PS criteria, no scope creep.
 5. If you detect technical decisions, flag them: "This should be in the Context Specification."
-6. Present the SB and ask the user to approve. If approved, write to `docs/pda-solution-brief.md`.
+6. Present the SB and ask the user to approve. If approved, write to `{base}/docs/pda-solution-brief.md`.
 7. Add a note at the end: "Technical decisions are defined in the Context Specification (Phase 3)."
 8. Never approve the SB yourself. Only the human approves.
