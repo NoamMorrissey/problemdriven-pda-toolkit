@@ -77,6 +77,11 @@ Export all data as a downloadable file. Import data from a previously exported f
 - **Gap ref:** PS §4 RC-4 — abandoned tracking systems lose all historical data
 - **Success ref:** PS §3.3 — tasks are not lost
 
+### BC-8: Filter by Assignee
+View tasks filtered by team member to quickly answer "what is [person] working on?" without scanning the entire board.
+- **Gap ref:** PS §2 — coordinators need the full picture of who is doing what
+- **Success ref:** PS §3.4 — reduced coordination overhead, no manual polling needed
+
 ---
 
 ## 5. Assumptions
