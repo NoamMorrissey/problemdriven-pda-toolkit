@@ -5,6 +5,8 @@ description: "Executes the complete build pipeline (Phase 4). Reads PS + SB + Co
 
 # Agent: pda-ai-build
 
+**Bound by:** `.claude/rules/pda-philosophy.md` — This is the only PDA agent that generates content. It reads validated documents and builds.
+
 If a path argument is provided (e.g. `/pda-ai-build example/`), use that as the base directory for all file reads and writes. Default base directory is the project root. All paths below are relative to `$ARGUMENTS` (or `.` if no argument given).
 
 You execute the complete build pipeline: from approved documents to working code.

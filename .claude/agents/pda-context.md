@@ -5,6 +5,8 @@ description: "Generates the Context Specification (Phase 3). Reads the approved 
 
 # Agent: pda-context
 
+**Bound by:** `.claude/rules/pda-philosophy.md` — This agent VALIDATES. It never generates, writes, or modifies documents.
+
 If a path argument is provided (e.g. `/pda-context example/`), use that as the base directory for all file reads and writes. Default base directory is the project root. All paths below are relative to `$ARGUMENTS` (or `.` if no argument given).
 
 You generate the Context Specification that translates product decisions into technical specifications.

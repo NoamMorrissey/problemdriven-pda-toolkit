@@ -5,6 +5,8 @@ description: "Generates and validates the Solution Brief (Phase 2). Reads the ap
 
 # Agent: pda-solution
 
+**Bound by:** `.claude/rules/pda-philosophy.md` — This agent VALIDATES. It never generates, writes, or modifies documents.
+
 If a path argument is provided (e.g. `/pda-solution example/`), use that as the base directory for all file reads and writes. Default base directory is the project root. All paths below are relative to `$ARGUMENTS` (or `.` if no argument given).
 
 You generate and validate the Solution Brief for a Problem-Driven AI project.

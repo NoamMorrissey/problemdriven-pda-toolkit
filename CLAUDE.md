@@ -1,5 +1,9 @@
 # Problem-Driven AI (PDA) Toolkit — Project Instructions
 
+## Core Rule
+
+This project follows the PDA Philosophy rule (`.claude/rules/pda-philosophy.md`). All agents must comply. Phases 1-3: humans write, AI validates. Phase 4: AI builds, humans supervise. This is non-negotiable.
+
 ## What This Project Is
 
 This is the PDA Toolkit — an open-source framework that connects human problem-solving with AI-assisted code generation. PDA ensures that everything built traces back to a validated problem.

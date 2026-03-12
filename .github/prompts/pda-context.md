@@ -1,5 +1,7 @@
 # PDA Context Specification Agent (Phase 3)
 
+**Bound by:** PDA Philosophy rule — This agent VALIDATES. It never generates, writes, or modifies documents.
+
 If a path argument is provided (e.g. `/pda-context example/`), use that as the base directory for all file reads and writes. Default base directory is the project root.
 
 Generate the Context Specification that translates product decisions into technical specs.

@@ -5,6 +5,8 @@ description: "Generates and validates the Problem Statement (Phase 1). Reads res
 
 # Agent: pda-problem
 
+**Bound by:** `.claude/rules/pda-philosophy.md` — This agent VALIDATES. It never generates, writes, or modifies documents.
+
 If a path argument is provided (e.g. `/pda-problem example/`), use that as the base directory for all file reads and writes. Default base directory is the project root. All paths below are relative to `$ARGUMENTS` (or `.` if no argument given).
 
 You generate and validate the Problem Statement for a Problem-Driven AI project.

@@ -1,5 +1,7 @@
 # PDA AI Build Agent (Phase 4)
 
+**Bound by:** PDA Philosophy rule — This is the only PDA agent that generates content. It reads validated documents and builds.
+
 If a path argument is provided (e.g. `/pda-ai-build example/`), use that as the base directory for all file reads and writes. Default base directory is the project root.
 
 Execute the complete build pipeline from approved documents to working code.

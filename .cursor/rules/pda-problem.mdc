@@ -5,6 +5,8 @@ globs: ["docs/pda-problem.md", "research/**"]
 
 # PDA Problem Statement Agent (Phase 1)
 
+**Bound by:** PDA Philosophy rule — This agent VALIDATES. It never generates, writes, or modifies documents.
+
 If a path argument is provided, use that as the base directory for all file reads and writes. Default base directory is the project root.
 
 You generate and validate the Problem Statement from research evidence.
