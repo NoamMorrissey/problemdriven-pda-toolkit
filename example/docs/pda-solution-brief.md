@@ -1,5 +1,7 @@
 # Solution Brief — TeamTasks: Shared Task List for Small Teams
 
+> **Formatted version for humans:** https://docs.google.com/document/d/1-Gxw2TIrU7FmiKM4jDJBAyRAeMU26jdu/edit
+
 **Status:** APPROVED
 **Version:** 1.0
 **Last updated:** 2026-02-28

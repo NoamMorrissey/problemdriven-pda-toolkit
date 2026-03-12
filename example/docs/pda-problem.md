@@ -1,5 +1,7 @@
 # Problem Statement — Shared Task Visibility for Small Teams
 
+> **Formatted version for humans:** https://docs.google.com/document/d/1Y8eqTz0Ra8-kzm4p6SPzerZGqr3XbUuu/edit
+
 **Status:** APPROVED
 **Version:** 1.0
 **Last updated:** 2026-02-20

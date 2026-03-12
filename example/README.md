@@ -48,3 +48,10 @@ That's what Problem-Driven AI does: it ensures the AI builds the right thing, no
 The research documents are also available in a NotebookLM for AI agent verification:
 
 **NotebookLM link:** https://notebooklm.google.com/notebook/b4da2d9c-5f80-49f4-ba1f-123977952dd6
+
+## Human-Readable Documents
+
+Formatted versions of the PDA artifacts for non-technical readers:
+
+- **Problem Statement:** https://docs.google.com/document/d/1Y8eqTz0Ra8-kzm4p6SPzerZGqr3XbUuu/edit
+- **Solution Brief:** https://docs.google.com/document/d/1-Gxw2TIrU7FmiKM4jDJBAyRAeMU26jdu/edit
