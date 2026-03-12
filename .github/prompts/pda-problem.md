@@ -12,5 +12,6 @@ Generate and validate a Problem Statement from research evidence.
 4. If evidence contradicts itself, flag the contradiction — do not resolve it silently.
 5. Apply evidence weighting: behavioral > declared, first-hand > secondary, quantitative > qualitative, recent > old.
 6. Include an Evidence Index table at the end.
-7. Present the PS and ask the user to approve. If approved, write to `{base}/docs/pda-problem.md`.
-8. Never invent insights. Never approve the PS yourself. Only the human approves.
+7. Present the result with a clear header FIRST: `✅ GATE 1: PASS — Problem Statement validated` (or `❌ GATE 1: FAIL` with numbered issues). Include one-sentence summary, key stats, and approval question. Then `---` separator, then the full PS content.
+8. If approved, write to `{base}/docs/pda-problem.md`.
+9. Never invent insights. Never approve the PS yourself. Only the human approves.

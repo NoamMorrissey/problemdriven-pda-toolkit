@@ -52,9 +52,21 @@ Execute the full pipeline **without stopping** unless a verification fails:
 - Write verification report to `{base}/pda-verification/verify-build.md`
 
 ### Step 6: Present Result
-- Show a summary table: all steps, all verifications, all statuses
-- Present the built code
-- Ask: **"Do you approve this build?"**
+- Show mini-status for each completed step:
+  ```
+  ✅ constitution.md generated
+  ✅ spec.md generated — verification PASS
+  ✅ plan.md generated — verification PASS
+  ✅ tasks.md generated — verification PASS (N tasks)
+  ✅ Build complete — verification PASS
+  ```
+- **FIRST LINE after status:** `✅ GATE 4: PASS — Build verified against Problem Statement` or stop at first failure: `❌ FAILED at [step] verification — [reason]`
+- **SECOND LINE:** One-sentence summary of what was built
+- **THIRD LINE:** Key stats — files generated, tasks executed, verifications passed
+- **FOURTH LINE:** Ask: **"Do you approve this build?"**
+- **SEPARATOR:** `---`
+- **THEN:** The built code and verification details
+- If any step fails: STOP immediately, show `❌ FAILED at [step] — [reason]`, do not continue
 
 ## Rules
 

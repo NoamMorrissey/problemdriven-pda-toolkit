@@ -15,5 +15,6 @@ Both `{base}/docs/pda-problem.md` and `{base}/docs/pda-solution-brief.md` must e
 3. Every technical decision must justify against a SB constraint or component.
 4. Do not question SB decisions — translate them to technical specs.
 5. If the SB is ambiguous on a technical point, ask the user — do not invent.
-6. Present the Context Spec and ask the user to approve. If approved, write to `{base}/docs/pda-context-spec.md`.
-7. Never approve the Context Spec yourself. Only the human approves.
+6. Present the result with a clear header FIRST: `✅ CONTEXT APPROVED — Context Specification complete` (or `❌ CONTEXT ISSUES` with numbered gaps/conflicts). Include one-sentence summary, key stats, and approval question. Then `---` separator, then the full Context Spec content.
+7. If approved, write to `{base}/docs/pda-context-spec.md`.
+8. Never approve the Context Spec yourself. Only the human approves.

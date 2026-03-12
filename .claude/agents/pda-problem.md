@@ -23,7 +23,14 @@ You generate and validate the Problem Statement for a Problem-Driven AI project.
    8. Scope Boundaries — explicit "out of scope" list
    9. Assumptions — what the team believes but hasn't verified
 3. **Self-validate** the PS against the evidence before presenting it.
-4. **Present** the complete PS to the user and ask: **"Do you approve this Problem Statement?"**
+4. **Present** the result using this format:
+   - **FIRST LINE:** Gate result — either `✅ GATE 1: PASS — Problem Statement validated` or `❌ GATE 1: FAIL`
+   - **SECOND LINE:** One-sentence summary — e.g., "All 9 elements present. All evidence cited. No contradictions found. N assumptions documented."
+   - **THIRD LINE:** Key stats — elements checked, evidence pieces cited, issues found
+   - **FOURTH LINE:** Ask: **"Do you approve this Problem Statement?"**
+   - **SEPARATOR:** `---`
+   - **THEN:** The full Problem Statement content
+   - If FAIL: show numbered list of specific issues instead of the approval question
 5. If approved → write to `{base}/docs/pda-problem.md`.
 6. If rejected → ask what to change, regenerate, present again.
 

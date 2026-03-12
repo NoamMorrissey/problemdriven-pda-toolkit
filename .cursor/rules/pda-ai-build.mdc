@@ -22,7 +22,7 @@ Execute without stopping unless a verification fails:
 3. Plan from constitution + spec → `{base}/.specify/specs/001-feature/plan.md` → verify coverage
 4. Tasks from plan → `{base}/.specify/specs/001-feature/tasks.md` → verify traceability + self-containment
 5. Implement following tasks → verify fidelity to PS
-6. Present summary + code, ask for approval
+6. Show mini-status for each step (✅ or ❌), then clear header: `✅ GATE 4: PASS — Build verified against Problem Statement` (or `❌ FAILED at [step] — [reason]` and STOP). Include summary, stats, approval question, then `---` separator, then built code
 
 ## Rules
 

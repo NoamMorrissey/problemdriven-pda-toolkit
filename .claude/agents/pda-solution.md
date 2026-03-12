@@ -27,7 +27,14 @@ Read `{base}/docs/pda-problem.md`. If it does not exist, **stop** and tell the u
    8. Translatability Map — readiness assessment for AI processing
    Plus: Actor Map, Decision Matrix, Feedback Log
 3. **Self-validate** the SB against the PS before presenting it.
-4. **Present** the complete SB to the user and ask: **"Do you approve this Solution Brief?"**
+4. **Present** the result using this format:
+   - **FIRST LINE:** Gate result — either `✅ GATE 2: PASS — Solution Brief validated` or `❌ GATE 2: FAIL`
+   - **SECOND LINE:** One-sentence summary — e.g., "All 8 sections complete. All components trace to Problem Statement. No scope creep detected."
+   - **THIRD LINE:** Key stats — sections checked, components traced, issues found
+   - **FOURTH LINE:** Ask: **"Do you approve this Solution Brief?"**
+   - **SEPARATOR:** `---`
+   - **THEN:** The full Solution Brief content
+   - If FAIL: show numbered list of specific issues instead of the approval question
 5. If approved → write to `{base}/docs/pda-solution-brief.md`.
 6. If rejected → ask what to change, regenerate, present again.
 

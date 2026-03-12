@@ -29,7 +29,14 @@ If either is missing, **stop** and tell the user which file is missing and which
    6. **Accessibility** — semantic HTML requirements, ARIA attributes, focus management, WCAG compliance level.
    7. **Error Handling** — patterns for storage errors, input validation, empty states, data corruption.
    8. **What Is NOT Decided Here** — reference to SB for product decisions, conflict resolution rule.
-3. **Present** the complete Context Specification to the user and ask: **"Do you approve this Context Specification?"**
+3. **Present** the result using this format:
+   - **FIRST LINE:** Gate result — either `✅ CONTEXT APPROVED — Context Specification complete` or `❌ CONTEXT ISSUES`
+   - **SECOND LINE:** One-sentence summary — e.g., "All technical decisions documented. No conflicts with Solution Brief."
+   - **THIRD LINE:** Key stats — sections completed, decisions documented, SB conflicts found
+   - **FOURTH LINE:** Ask: **"Do you approve this Context Specification?"**
+   - **SEPARATOR:** `---`
+   - **THEN:** The full Context Specification content
+   - If ISSUES: show numbered list of gaps or conflicts instead of the approval question
 4. If approved → write to `{base}/docs/pda-context-spec.md`.
 5. If rejected → ask what to change, regenerate, present again.
 

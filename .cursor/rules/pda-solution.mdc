@@ -20,5 +20,6 @@ You generate and validate the Solution Brief from the approved Problem Statement
 3. CRITICAL: NO technical decisions in the SB. No stack, architecture, data model, or libraries. Those go in Context Specification (Phase 3).
 4. Validate: every component traces to PS, success criteria cover all PS criteria, no scope creep.
 5. If technical decisions detected, flag: "This should be in the Context Specification."
-6. Present and ask for approval. If approved → write `{base}/docs/pda-solution-brief.md`.
-7. Never approve the SB yourself.
+6. Present with clear header FIRST: `✅ GATE 2: PASS — Solution Brief validated` (or `❌ GATE 2: FAIL` with numbered issues). Include summary, stats, approval question. Then `---` separator, then full SB.
+7. If approved → write `{base}/docs/pda-solution-brief.md`.
+8. Never approve the SB yourself.

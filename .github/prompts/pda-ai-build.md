@@ -17,7 +17,7 @@ Execute the full pipeline without stopping unless a verification fails:
 3. **Plan** — generate technical plan → `{base}/.specify/specs/001-feature/plan.md` → verify coverage + no orphan components
 4. **Tasks** — decompose into self-contained tasks → `{base}/.specify/specs/001-feature/tasks.md` → verify traceability + self-containment
 5. **Implement** — build the code following tasks in dependency order → verify fidelity to PS
-6. **Present** — show summary table of all verifications, present code, ask user to approve
+6. **Present** — show mini-status for each step (✅ or ❌), then clear header: `✅ GATE 4: PASS — Build verified against Problem Statement` (or `❌ FAILED at [step] — [reason]` and STOP). Include summary, stats, approval question, then `---` separator, then the built code
 
 ## Rules
 
