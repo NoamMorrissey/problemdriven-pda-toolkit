@@ -4,16 +4,16 @@ This file provides context for AI coding agents (GitHub Copilot, Cursor, and oth
 
 ## Project Context
 
-This project uses the Problem-Driven AI methodology. Four AI agents guide the user from research evidence to working code. Each agent has a specific job and a mandatory human approval gate. The AI does not make important decisions — it generates, validates, and presents artifacts for human review.
+This project uses the Problem-Driven AI methodology. Phases 1-3: Humans write documents, AI agents validate them. Phase 4: AI builds, humans supervise. Each agent has a specific job and a mandatory human approval gate.
 
 ## The 4 Agents
 
-| Agent | Purpose | Reads | Writes |
+| Agent | Role | Reads | Writes |
 |---|---|---|---|
-| `pda-problem` | Generate + validate Problem Statement from research evidence | `research/` | `docs/pda-problem.md` |
-| `pda-solution` | Generate + validate Solution Brief (business decisions only) | `docs/pda-problem.md` | `docs/pda-solution-brief.md` |
-| `pda-context` | Generate Context Specification (technical decisions) | `docs/pda-problem.md`, `docs/pda-solution-brief.md` | `docs/pda-context-spec.md` |
-| `pda-ai-build` | Build code from all 3 docs via spec pipeline | All 3 docs | `.specify/`, `src/`, `pda-verification/` |
+| `pda-problem` | **Validates** human-written Problem Statement | `docs/pda-problem.md` + `research/` | Nothing (read-only) |
+| `pda-solution` | **Validates** human-written Solution Brief | `docs/pda-solution-brief.md` + `docs/pda-problem.md` | Nothing (read-only) |
+| `pda-context` | **Validates** human-written Context Specification | `docs/pda-context-spec.md` + PS + SB | Nothing (read-only) |
+| `pda-ai-build` | **Generates** code from all 3 validated docs (only generator) | All 3 docs | `.specify/`, `src/`, `pda-verification/` |
 
 All agents accept an optional base path argument (e.g., `/pda-problem example/`). Default base directory is the project root.
 
@@ -34,7 +34,7 @@ All agents accept an optional base path argument (e.g., `/pda-problem example/`)
 
 1. **Never invent.** Flag gaps instead of filling them with assumptions.
 2. **Traceability is mandatory.** Every artifact traces to Solution Brief → Problem Statement → Evidence.
-3. **Agents generate drafts and verify, but only humans approve.**
+3. **Agents validate (Phases 1-3), only `/pda-ai-build` generates. Humans always approve.**
 4. **SB = business decisions. Context Spec = technical decisions.** Never mix them.
 5. **Verify before presenting.** Each agent validates its output before asking for human approval.
 

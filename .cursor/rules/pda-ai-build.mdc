@@ -1,5 +1,5 @@
 ---
-description: "Execute the complete build pipeline from approved documents to working code (PDA Phase 4)"
+description: "Execute the complete build pipeline (PDA Phase 4). This is the only PDA agent that generates content — the other three validate human-written documents."
 globs: ["docs/pda-problem.md", "docs/pda-solution-brief.md", "docs/pda-context-spec.md", ".specify/**"]
 ---
 

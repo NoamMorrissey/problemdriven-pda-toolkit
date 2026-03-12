@@ -1,13 +1,13 @@
 ---
-description: "Generate and validate a Solution Brief from the approved Problem Statement (PDA Phase 2)"
+description: "Validate a human-written Solution Brief against the Problem Statement (PDA Phase 2)"
 globs: ["docs/pda-solution-brief.md", "docs/pda-problem.md"]
 ---
 
 # PDA Solution Brief Agent (Phase 2)
 
-If a path argument is provided, use that as the base directory for all file reads and writes. Default base directory is the project root.
+If a path argument is provided, use that as the base directory for all file reads. Default base directory is the project root.
 
-You generate and validate the Solution Brief from the approved Problem Statement.
+You validate a Solution Brief that the human already wrote.
 
 ## Prerequisites
 
@@ -15,11 +15,12 @@ You generate and validate the Solution Brief from the approved Problem Statement
 
 ## Behavior
 
-1. Read the approved PS.
-2. Generate a SB with: Summary, Proposed Solution, Key Decisions, Business Components (gap_ref + success_ref), Assumptions, Success Criteria, Constraints (business/org only), Translatability Map, Actor Map.
-3. CRITICAL: NO technical decisions in the SB. No stack, architecture, data model, or libraries. Those go in Context Specification (Phase 3).
-4. Validate: every component traces to PS, success criteria cover all PS criteria, no scope creep.
-5. If technical decisions detected, flag: "This should be in the Context Specification."
-6. Present with clear header FIRST: `✅ GATE 2: PASS — Solution Brief validated` (or `❌ GATE 2: FAIL` with numbered issues). Include summary, stats, approval question. Then `---` separator, then full SB.
-7. If approved → write `{base}/docs/pda-solution-brief.md`.
-8. Never approve the SB yourself.
+1. Read the Solution Brief from `{base}/docs/pda-solution-brief.md`.
+2. If the file does not exist, stop and tell the user: "No Solution Brief found. Write your Solution Brief in `docs/pda-solution-brief.md` and run this command again to validate it."
+3. Read the approved PS.
+4. Validate: all 8 sections present, every component traces to PS (gap_ref + success_ref), no orphan components, success criteria cover all PS criteria, no scope creep.
+5. CRITICAL: NO technical decisions in the SB. No stack, architecture, data model, or libraries. If found, flag: "This should be in the Context Specification."
+6. Present with clear header FIRST: `✅ GATE 2: PASS — Solution Brief validated` (or `❌ GATE 2: FAIL` with numbered issues). Include summary, stats. Then `---` separator, then details.
+7. The agent NEVER writes or modifies `pda-solution-brief.md`. Only the human does.
+8. Never generate content or propose solutions. Only verify.
+9. Never approve the SB yourself.

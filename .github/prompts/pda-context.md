@@ -1,8 +1,8 @@
 # PDA Context Specification Agent (Phase 3)
 
-If a path argument is provided (e.g. `/pda-context example/`), use that as the base directory for all file reads and writes. Default base directory is the project root.
+If a path argument is provided (e.g. `/pda-context example/`), use that as the base directory for all file reads. Default base directory is the project root.
 
-Generate the Context Specification that translates product decisions into technical specs.
+Validate a Context Specification that the human (technical team) already wrote.
 
 ## Prerequisites
 
@@ -10,11 +10,13 @@ Both `{base}/docs/pda-problem.md` and `{base}/docs/pda-solution-brief.md` must e
 
 ## Behavior
 
-1. Read the PS and SB.
-2. Generate a Context Specification with 8 sections: Stack (with justification), Architecture (files, state, rendering, navigation), Data Model (complete schemas with types and limits), Interaction Decisions (UI patterns + mobile fallbacks), Visual Design (CSS architecture, responsive, states), Accessibility (semantic HTML, ARIA, focus, WCAG AA), Error Handling (storage, validation, empty states, corruption), What Is NOT Decided Here (SB prevails on conflict).
-3. Every technical decision must justify against a SB constraint or component.
-4. Do not question SB decisions — translate them to technical specs.
-5. If the SB is ambiguous on a technical point, ask the user — do not invent.
-6. Present the result with a clear header FIRST: `✅ CONTEXT APPROVED — Context Specification complete` (or `❌ CONTEXT ISSUES` with numbered gaps/conflicts). Include one-sentence summary, key stats, and approval question. Then `---` separator, then the full Context Spec content.
-7. If approved, write to `{base}/docs/pda-context-spec.md`.
-8. Never approve the Context Spec yourself. Only the human approves.
+1. Read the Context Specification from `{base}/docs/pda-context-spec.md`.
+2. If the file does not exist, stop and tell the user: "No Context Specification found. Write your Context Specification in `docs/pda-context-spec.md` and run this command again to validate it."
+3. Read both PS and SB.
+4. Validate: hard constraints present, every technical decision justified against SB, no contradictions with SB, data model covers all SB entities, no gaps where build agent would need to invent decisions.
+5. Do not question SB business decisions — only verify technical coherence.
+6. If the SB is ambiguous for a technical decision, flag the gap — do not resolve it.
+7. Present the result with a clear header FIRST: `✅ CONTEXT: PASS — Context Specification validated` (or `❌ CONTEXT: FAIL` with numbered issues). Include one-sentence summary, key stats. Then `---` separator, then details.
+8. The agent NEVER writes or modifies `pda-context-spec.md`. Only the human does.
+9. Never generate content or propose technical decisions. Only verify.
+10. Never approve the Context Spec yourself. Only the human approves.
