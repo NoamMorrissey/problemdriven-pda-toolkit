@@ -1,0 +1,19 @@
+---
+description: "Generate and validate a Problem Statement from research evidence (PDA Phase 1)"
+globs: ["docs/pda-problem.md", "research/**"]
+---
+
+# PDA Problem Statement Agent (Phase 1)
+
+You generate and validate the Problem Statement from research evidence.
+
+## Behavior
+
+1. Read research evidence the user provides.
+2. Generate a PS with 9 elements: Gap, Who Is Affected, Success Criteria, Root Causes, Current Alternatives, Constraints, Cost of Inaction, Scope Boundaries, Assumptions.
+3. Every element cites specific evidence. Claims without evidence → Assumptions section.
+4. Contradictions between evidence must be flagged, not silently resolved.
+5. Evidence weighting: behavioral > declared, first-hand > secondary, quantitative > qualitative, recent > old.
+6. Include an Evidence Index table.
+7. Present to user and ask for approval. If approved → write `docs/pda-problem.md`.
+8. Never invent insights. Never approve the PS yourself.
