@@ -118,12 +118,14 @@ Each version is triggered by real usage, not by a calendar.
 
 | Version | Trigger | What's added |
 |---|---|---|
-| **V1** (current) | — | 4 PDA agents (`pda-problem`, `pda-solution`, `pda-context`, `pda-ai-build`), Problem → Build flow, TeamTasks example, multi-agent support (Claude Code, Copilot, Cursor) |
-| **V2** | V1 used on a real project with real users | **Phase 5: Market closes the loop.** `pda-market-monitor` agent classifies real user signals, connects them to Problem Statement assumptions, and proposes context updates. Signals can reopen Phase 1, 2, or 3. New artifacts: Signal Log, Iteration Brief, Context Update Record. |
-| **V3** | Gaps in Context Specification quality detected in V1-V2 | **Solid foundations.** Context Specification evolves into a standardized pattern with required/optional sections by project type. Google Docs integration (agents read/write directly). Formal Gate 3 with real exit criteria. |
-| **V4** | Static evidence files become a bottleneck | **Living evidence.** Real RAG connection (NotebookLM, Notion, or similar). Evidence is a live system the agent queries, not a static file. Automatic obsolescence detection for evidence older than 6 months. |
-| **V5** | Non-technical teams blocked by terminal requirement | **Web experience.** Web interface for Phases 1-2 where product and business teams write and approve Problem Statement and Solution Brief without a terminal. Technical team continues using Claude Code for Phases 3-4. Shared artifacts. |
-| **V6** | Demand for unified experience across all roles | **Full platform.** Phases 1-5 in a unified interface. Business and technical teams in the same system. Visual traceability dashboard from problem to code to market signals. |
+| **Beta 0.1** (Foundation) | — | The [problemdriven.ai](https://problemdriven.ai) website. The theoretical concept that supports agent development: 5 phases, 10 principles, methodology documentation. |
+| **Beta 0.2** (current) | Foundation published | This toolkit. 4 PDA agents (`pda-problem`, `pda-solution`, `pda-context`, `pda-ai-build`), Problem → Build flow, TeamTasks example, multi-agent support (Claude Code, Copilot, Cursor). |
+| **Beta 0.3** | Beta 0.2 used on a real project with real users | **Phase 5: Market closes the loop.** `pda-market-monitor` agent classifies real user signals, connects them to Problem Statement assumptions, and proposes context updates. Signals can reopen Phase 1, 2, or 3. New artifacts: Signal Log, Iteration Brief, Context Update Record. |
+| **Beta 0.4** | Gaps in Context Specification quality detected in Beta 0.2-0.3 | **Solid foundations.** Context Specification evolves into a standardized pattern with required/optional sections by project type. Google Docs integration (agents read/write directly). Formal Gate 3 with real exit criteria. |
+| **RC 1.0** | Static evidence files become a bottleneck | **Living evidence.** Real RAG connection (NotebookLM, Notion, or similar). Evidence is a live system the agent queries, not a static file. Automatic obsolescence detection. Polish and stabilization of everything built in Beta. |
+| **1.0** | RC 1.0 stabilized and validated | **Stable release.** All Beta and RC features tested, documented, and production-ready. |
+| **1.x** | Non-technical teams blocked by terminal requirement | **Web experience.** Web interface for Phases 1-2 where product and business teams write and approve Problem Statement and Solution Brief without a terminal. Technical team continues using Claude Code for Phases 3-4. Shared artifacts. |
+| **2.0** | Demand for unified experience across all roles | **Full platform.** Phases 1-5 in a unified interface. Business and technical teams in the same system. Visual traceability dashboard from problem to code to market signals. |
 
 ---
 
