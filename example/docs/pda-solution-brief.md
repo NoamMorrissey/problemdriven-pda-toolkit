@@ -12,7 +12,7 @@
 
 ## 1. Solution Summary
 
-A browser-based shared task list where small teams (2-8 people) can create, assign, and track tasks with zero setup. No accounts, no installation, no configuration. Open the page, add a team member name, create a task, assign it. Everyone on the team sees the same list in real time via shared browser access (same device or shared URL with localStorage sync).
+A browser-based shared task list where small teams (2-8 people) can create, assign, and track tasks with zero setup. No accounts, no installation, no configuration. Open the page, add a team member name, create a task, assign it. Everyone on the team sees the same list in real time via shared browser access (same device or shared browser access).
 
 **gap_ref:** PS element 1 (tasks assigned in ephemeral channels, 30% visibility gap)
 **success_ref:** PS element 3 (100% task visibility, creation under 15 seconds, adoption >80% at 2 weeks)
@@ -81,7 +81,7 @@ Not applicable. No AI/ML in this solution.
 
 | ID | Assumption | Source | Risk | Constraint | Status |
 |---|---|---|---|---|---|
-| A-001 | A zero-setup shared list will achieve higher adoption than Trello/Asana in small teams | PS | High | Must measure 2-week retention against 47% abandonment baseline (E-008) | Unverified |
+| A-001 | A zero-setup shared list will achieve higher adoption than Trello/Asana in small teams | PS | High | Must measure 2-week retention against 53% abandonment baseline (E-008) | Unverified |
 | A-002 | localStorage is sufficient for single-device/single-browser usage in an example | PS | Low | Document limitation clearly; real deployment would need a backend | Active → constraint: README must state localStorage limitation |
 | A-003 | Teams will check the shared list without push notifications | PS | Medium | Must be fast enough to load that "checking" feels effortless | Active → constraint: page load under 1 second |
 | A-004 | Three fields (title, person, date) are enough for a task | New | Low | If users need more fields, that's a V2 signal, not a V1 blocker | Active |
@@ -126,7 +126,7 @@ Not applicable. No AI/ML in this solution.
 - Must be understandable by non-technical users. (E-004: creative, consulting, marketing users)
 
 ### Organizational
-- Onboarding under 2 minutes. User should be creating tasks within 30 seconds of opening. (E-009: 27% abandoned tools due to long onboarding)
+- Onboarding under 2 minutes. User should be creating tasks within 30 seconds of opening. (E-008: 27% abandoned tools due to long onboarding)
 
 ---
 
