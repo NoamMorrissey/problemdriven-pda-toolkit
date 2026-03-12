@@ -4,7 +4,7 @@
 
 If a path argument is provided (e.g. `/pda-ai-build example/`), use that as the base directory for all file reads and writes. Default base directory is the project root.
 
-Execute the complete build pipeline from approved documents to working code.
+This is the only PDA agent that generates content. The other three (pda-problem, pda-solution, pda-context) validate human-written documents. This agent reads the validated documents and produces the build artifacts.
 
 ## Prerequisites
 

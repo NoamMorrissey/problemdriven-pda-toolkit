@@ -1,14 +1,14 @@
-# 🤖 How Agents Work
+# How Agents Work
 
-PDA agents are instructions that tell the AI how to generate and verify artifacts. Each agent has one specific job, a set of validation rules, and a mandatory human approval gate.
+PDA has 4 agents. Three of them **validate** human-written documents. One of them **generates** code. Each agent has a specific job, a set of validation rules, and a mandatory human approval gate.
 
 ---
 
 ## The 4 Agents
 
-### `/pda-problem` — Problem Statement Generator
+### `/pda-problem` — Problem Statement Validator
 
-**What it does:** Reads your research evidence (interviews, surveys, analytics, competitor analysis) and generates a Problem Statement with 9 elements: gap, who is affected, success criteria, root causes, current alternatives, constraints, cost of inaction, scope boundaries, and assumptions.
+**What it does:** Reads your Problem Statement (that you wrote in `docs/pda-problem.md`) and your research evidence, then validates the PS against the evidence. It checks that all 9 elements are present, every claim cites evidence, contradictions are flagged, and assumptions are labeled.
 
 **What it validates:**
 - Every element cites specific evidence with IDs
@@ -16,13 +16,13 @@ PDA agents are instructions that tell the AI how to generate and verify artifact
 - Contradictions in evidence are flagged, not hidden
 - Assumptions are explicitly labeled with risk and validation plan
 
-**When it stops:** If it finds contradictions in the evidence that it cannot resolve, it flags them and asks you to decide.
+**What it never does:** Generate, modify, or propose Problem Statement content. The human writes the PS. The agent only verifies.
 
 ---
 
-### `/pda-solution` — Solution Brief Generator
+### `/pda-solution` — Solution Brief Validator
 
-**What it does:** Reads the approved Problem Statement and generates a Solution Brief with business decisions only: solution summary, components, success criteria, constraints, actor map, and priorities.
+**What it does:** Reads your Solution Brief (that you wrote in `docs/pda-solution-brief.md`) and the approved Problem Statement, then validates traceability and completeness.
 
 **What it validates:**
 - Every component traces to a gap and success criterion in the PS
@@ -31,23 +31,30 @@ PDA agents are instructions that tell the AI how to generate and verify artifact
 
 **What it rejects:** Technical decisions. If the agent detects stack choices, architecture patterns, or data model details, it flags them. Those belong in the Context Specification.
 
+**What it never does:** Generate, modify, or propose Solution Brief content. The human writes the SB. The agent only verifies.
+
 ---
 
-### `/pda-context` — Context Specification Generator
+### `/pda-context` — Context Specification Validator
 
-**What it does:** Reads the approved PS and SB, then generates a Context Specification covering: stack, architecture, data model, interaction patterns, visual design, accessibility, and error handling.
+**What it does:** Reads your Context Specification (that you wrote in `docs/pda-context-spec.md`) and both PS and SB, then validates technical coherence against the Solution Brief.
 
 **What it validates:**
 - Every technical decision is justified against a SB constraint or component
-- The SB conflict resolution clause applies: if SB and Context Spec conflict, SB prevails
+- No technical decision contradicts a SB constraint
+- No gaps where the build agent would need to invent decisions
 
-**When it asks you:** If the SB is ambiguous about something the Context Spec needs to decide, the agent asks instead of inventing. It will never fill gaps with assumptions.
+**What it flags:** Gaps where the SB is ambiguous for a technical decision — the agent never resolves these, it flags them for the human to decide.
+
+**What it never does:** Generate, modify, or propose Context Specification content. The human writes the Context Spec. The agent only verifies.
 
 ---
 
-### `/pda-ai-build` — Build Pipeline
+### `/pda-ai-build` — Build Pipeline (the only generator)
 
-**What it does:** Reads all three documents (PS, SB, Context Spec) and executes the full chain:
+**This is the only PDA agent that generates content.** The other three validate human-written documents.
+
+**What it does:** Reads all three validated documents (PS, SB, Context Spec) and executes the full chain:
 
 1. **Constitution** — Extracts rules and constraints from the Context Spec
 2. **Spec** — Generates a detailed specification
@@ -60,22 +67,24 @@ PDA agents are instructions that tell the AI how to generate and verify artifact
 
 ---
 
-## 🔒 Verification Rules
+## Verification Rules
 
-Each agent carries its own set of validation rules (labeled R1–R8, S1–S8, C1–C4, B1–B5). The common thread across all agents:
+Each agent carries its own set of validation rules (labeled R1–R7, S1–S4, C1–C3, B1–B5). The common thread across all agents:
 
 - **Never invent.** If information is missing, flag it. Don't fill gaps.
 - **Traceability is mandatory.** Every claim traces back through the chain: Code → Spec → Context Spec → SB → PS → Evidence.
-- **Verify before presenting.** Every agent runs its own validation before asking for your approval.
+- **Verify before presenting.** Every agent runs its own validation before reporting results.
 
 ---
 
-## 💡 Human Approval Is Always Required
+## Human Approval Is Always Required
 
-No agent makes final decisions. Every agent generates a draft, validates it against its rules, and then presents it to you for review. You can:
+No agent makes final decisions. The three validation agents report PASS or FAIL — the human decides what to do with the result. The build agent presents its output — the human approves or rejects.
 
-- **Approve** — The agent writes the artifact and you move to the next phase
-- **Request changes** — Tell the agent what to fix, it regenerates and presents again
-- **Reject** — Go back to the source and rework the input
+You can:
+
+- **Fix and re-validate** — Fix the issues the agent found, run the agent again
+- **Override** — If you disagree with a FAIL, you decide. The agents work for you.
+- **Reject a build** — Go back to the source documents and rework them
 
 The agents work for you. You have the final say at every gate.

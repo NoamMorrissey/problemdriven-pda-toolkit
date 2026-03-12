@@ -1,6 +1,6 @@
 ---
 name: pda-ai-build
-description: "Executes the complete build pipeline (Phase 4). Reads PS + SB + Context Spec, generates all Spec Kit artifacts (constitution, spec, plan, tasks), verifies each one, builds the code, and presents the final result for approval. Stops automatically if any verification fails."
+description: "Executes the complete build pipeline (Phase 4). This is the only PDA agent that generates content. The other three (pda-problem, pda-solution, pda-context) validate human-written documents. This agent reads the validated documents and produces the build artifacts."
 ---
 
 # Agent: pda-ai-build
@@ -9,7 +9,7 @@ description: "Executes the complete build pipeline (Phase 4). Reads PS + SB + Co
 
 If a path argument is provided (e.g. `/pda-ai-build example/`), use that as the base directory for all file reads and writes. Default base directory is the project root. All paths below are relative to `$ARGUMENTS` (or `.` if no argument given).
 
-You execute the complete build pipeline: from approved documents to working code.
+This is the only PDA agent that generates content. The other three agents (`pda-problem`, `pda-solution`, `pda-context`) validate human-written documents. This agent reads the validated documents and produces the build artifacts: from approved documents to working code.
 
 ## Prerequisites
 

@@ -1,28 +1,34 @@
-# 📊 The Process
+# The Process
 
 How Problem-Driven AI works, from research to working code.
 
 ---
 
-## 🎯 The Core Idea
+## The Core Idea
 
 90% of the value in a software project is generated **before the AI writes a single line of code**.
 
 The AI does not think. The AI executes. Humans think. Humans investigate, synthesize, and decide. The toolkit structures that human thinking into artifacts the AI can execute from — without inventing, without guessing, without making decisions it shouldn't make.
 
+**Phases 1-3: Humans think, AI validates.** The human writes the Problem Statement, Solution Brief, and Context Specification. The AI agents verify completeness, traceability, and coherence — but never generate or modify these documents.
+
+**Phase 4: AI builds, humans supervise.** The AI reads the three validated documents and produces working code. The human reviews and approves.
+
 When the AI starts building, it should not need to make any important decision. Only execute.
 
 ---
 
-## 📊 The 4 Phases
+## The 4 Phases
 
 ### Phase 1: Problem
 
-**What happens:** You investigate the real problem through evidence — user interviews, surveys, analytics, competitor analysis. The AI agent reads this evidence, generates a Problem Statement with 9 elements, and validates every claim against the evidence.
+**What happens:** You investigate the real problem through evidence — user interviews, surveys, analytics, competitor analysis. You write a Problem Statement with 9 elements, citing your research. The AI agent reads your PS and the evidence, then validates every claim.
 
-**Who participates:** The product team provides the research. The AI agent structures and validates it.
+**Who does what:**
+- **Human:** Investigates, synthesizes evidence, writes the Problem Statement.
+- **AI agent:** Validates the PS against the evidence. Reports PASS or FAIL with specific issues.
 
-**Output:** `docs/pda-problem.md` — the Problem Statement.
+**Output:** `docs/pda-problem.md` — the Problem Statement (written by human, validated by AI).
 
 **Gate Review (Gate 1):**
 - All 9 elements are present and complete
@@ -35,11 +41,13 @@ When the AI starts building, it should not need to make any important decision. 
 
 ### Phase 2: Solution
 
-**What happens:** Based on the approved Problem Statement, you define what to build and why. The AI agent generates a Solution Brief with business decisions only — components, success criteria, constraints, actor map.
+**What happens:** Based on the approved Problem Statement, you define what to build and why. You write a Solution Brief with business decisions only — components, success criteria, constraints, actor map. The AI agent validates traceability to the PS.
 
-**Who participates:** The product team makes business decisions. The AI agent structures and validates traceability.
+**Who does what:**
+- **Human:** Makes business decisions, writes the Solution Brief.
+- **AI agent:** Validates traceability to PS, flags technical decisions that don't belong. Reports PASS or FAIL.
 
-**Output:** `docs/pda-solution-brief.md` — the Solution Brief.
+**Output:** `docs/pda-solution-brief.md` — the Solution Brief (written by human, validated by AI).
 
 **Gate Review (Gate 2):**
 - Every component traces to a gap and success criterion in the PS
@@ -51,24 +59,28 @@ When the AI starts building, it should not need to make any important decision. 
 
 ### Phase 3: Context
 
-**What happens:** The approved Problem Statement and Solution Brief are translated into technical decisions. The AI agent generates a Context Specification covering stack, architecture, data model, interaction patterns, visual design, accessibility, and error handling.
+**What happens:** You translate the approved Solution Brief into technical decisions. You write a Context Specification covering stack, architecture, data model, interaction patterns, visual design, accessibility, and error handling. The AI agent validates technical coherence against the SB.
 
-**Who participates:** The technical team (or Context Engineer) makes technical decisions. The AI agent structures and validates them against the SB.
+**Who does what:**
+- **Human (technical team):** Makes technical decisions, writes the Context Specification.
+- **AI agent:** Validates coherence against SB, flags gaps and contradictions. Reports PASS or FAIL.
 
-**Output:** `docs/pda-context-spec.md` — the Context Specification.
+**Output:** `docs/pda-context-spec.md` — the Context Specification (written by human, validated by AI).
 
 **Gate Review (Gate 3):**
 - Every technical decision is justified against a SB constraint or component
-- No ambiguity was resolved by inventing — the agent asked the human
+- No gaps where the build agent would need to invent decisions
 - Human approves
 
 ---
 
 ### Phase 4: Build
 
-**What happens:** The AI reads all three documents and executes the full build pipeline: constitution → spec → plan → tasks → code → verification. Each step is verified before proceeding. If any check fails, the agent stops.
+**What happens:** The AI reads all three validated documents and executes the full build pipeline: constitution → spec → plan → tasks → code → verification. Each step is verified before proceeding. If any check fails, the agent stops. **This is the only phase where the AI generates content.**
 
-**Who participates:** The AI builds. The human reviews and approves.
+**Who does what:**
+- **AI agent:** Builds everything — spec artifacts, plan, tasks, code.
+- **Human:** Reviews and approves.
 
 **Output:** Working code in `src/`, spec artifacts in `.specify/`, verification reports in `pda-verification/`.
 
@@ -80,7 +92,7 @@ When the AI starts building, it should not need to make any important decision. 
 
 ---
 
-## 🔑 Key Concept: Solution Brief vs Context Specification
+## Key Concept: Solution Brief vs Context Specification
 
 The **Solution Brief** defines **what** to build and **why**. It contains product decisions: components, success criteria, constraints, actor map, priorities. It does not mention any technology.
 
@@ -92,7 +104,7 @@ The **Context Specification** defines **how** to build it. It contains technical
 
 ---
 
-## 🔗 Go Deeper
+## Go Deeper
 
 The full Problem-Driven AI methodology covers five phases (this toolkit implements the first four), ten principles, and detailed guidance on anti-patterns and edge cases.
 
