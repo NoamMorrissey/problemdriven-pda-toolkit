@@ -13,7 +13,6 @@
 ```bash
 git clone https://github.com/problemdriven/pda-toolkit.git my-project
 cd my-project
-git init && git add -A && git commit -m "Initial PDA setup"
 ```
 
 ---

@@ -11,6 +11,7 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+*.code-workspace
 
 # Environment
 .env

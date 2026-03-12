@@ -45,23 +45,7 @@
 |---|---|---|---|---|
 | | | PS element # | PS criterion # | Must / Should / Could |
 
-### Architecture / Arquitectura
-- **Frontend:** [technology + rationale]
-- **Backend:** [technology + rationale]
-- **Database:** [technology + rationale]
-- **Infrastructure:** [hosting, CI/CD]
-- **Security:** [auth, data protection]
-
-### Data / Datos
-- **Sources / Fuentes:** [origin]
-- **Formats / Formatos:** [structure]
-- **Quality / Calidad:** [requirements]
-- **Privacy / Privacidad:** [GDPR, retention]
-
-### Model / Modelo (if AI/ML)
-- **Type / Tipo:** [classification, generation, etc.]
-- **Performance / Rendimiento:** [accuracy, latency, cost]
-- **Fallback:** [when model fails]
+> **Note:** Technical decisions (architecture, data model, interaction patterns) belong in the Context Specification (`docs/pda-context-spec.md`), not here. This section covers business/product dimensions only.
 
 ---
 
@@ -105,9 +89,6 @@
 | Dimension / Dimensión | Rating / Calificación | Issues / Problemas | Action / Acción |
 |---|---|---|---|
 | Business / Negocio | Sufficient / Needs refinement / Insufficient | | |
-| Architecture / Arquitectura | | | |
-| Data / Datos | | | |
-| Model / Modelo | | | |
 | Constraints / Restricciones | | | |
 | Success criteria / Criterios de éxito | | | |
 

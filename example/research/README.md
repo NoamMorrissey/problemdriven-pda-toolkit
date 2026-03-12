@@ -33,7 +33,7 @@ The file `evidence.jsonl` is the structured evidence base that PDA agents query 
 - `secondary-competitive` — Competitor information
 - `secondary-quantitative` — Third-party numbers
 
-When `pda-problem-validator` runs `skill-evidence-lookup`, it reads this file and verifies that evidence IDs cited in the Problem Statement exist, have sufficient metadata, and support the claims they're attached to.
+When `/pda-problem` runs, it reads this file and verifies that evidence IDs cited in the Problem Statement exist, have sufficient metadata, and support the claims they're attached to.
 
 ### For humans: Research documents + NotebookLM
 
@@ -68,4 +68,4 @@ To add evidence to this project:
 1. Create the research document in the appropriate subfolder
 2. Add a new line to `evidence.jsonl` with full metadata
 3. Reference the new evidence ID in the Problem Statement
-4. Run `/pda.validate-problem` to verify completeness
+4. Run `/pda-problem` to regenerate and verify the Problem Statement

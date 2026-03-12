@@ -1,10 +1,10 @@
-# Problem-Driven AI × Spec Kit — Project Instructions
+# Problem-Driven AI (PDA) Toolkit — Project Instructions
 
 ## What This Project Is / Qué es este proyecto
 
-This is a Problem-Driven AI (PDA) project using Spec Kit for spec-driven development. PDA adds a verification layer ensuring everything built traces back to a validated problem.
+This is the Problem-Driven AI (PDA) Toolkit — an open-source framework that connects human problem-solving with AI-assisted code generation. PDA ensures that everything built traces back to a validated problem.
 
-Este es un proyecto Problem-Driven AI (PDA) que usa Spec Kit para desarrollo dirigido por especificaciones. PDA añade una capa de verificación que garantiza que todo lo construido tiene trazabilidad a un problema validado.
+Este es el PDA Toolkit — un framework open-source que conecta la resolución humana de problemas con generación de código asistida por IA. PDA garantiza que todo lo construido tiene trazabilidad a un problema validado.
 
 ## Core Principle / Principio central
 
@@ -12,38 +12,32 @@ The AI builds. Humans think. When the AI starts building, it should not need to 
 
 La IA construye. Los humanos piensan. Cuando la IA empieza a construir, no debería necesitar tomar ninguna decisión importante. Solo ejecutar.
 
-## Architecture / Arquitectura
+## 4 Phases, 4 Agents, 4 Gates
 
-- **Phases 1–2:** Humans investigate and decide. PDA agents verify.
-- **Phase 3:** PDA adapter translates human artifacts into Spec Kit inputs. PDA agents verify each output.
-- **Phase 4:** Spec Kit implements. PDA agents verify fidelity post-build.
+| Phase | Agent | Input | Output | Gate |
+|---|---|---|---|---|
+| 1. Problem | `/pda-problem` | Research evidence | `docs/pda-problem.md` | Human approves PS |
+| 2. Solution | `/pda-solution` | Approved PS | `docs/pda-solution-brief.md` | Human approves SB |
+| 3. Context | `/pda-context` | Approved PS + SB | `docs/pda-context-spec.md` | Human approves Context Spec |
+| 4. AI Build | `/pda-ai-build` | PS + SB + Context Spec | Working code in `src/` | Human approves build |
 
 ## Key Files / Archivos clave
 
 - `docs/pda-problem.md` — Problem Statement (9 elements). Source of truth for the problem.
-- `docs/pda-solution-brief.md` — Solution Brief (8 sections). Source of truth for the solution.
-- `.pda/agents/pda-problem-validator.md` — Verification agent: traceability, evidence, consistency.
-- `.pda/agents/pda-solution-brief.md` — Verification agent: coverage, translatability.
-- `.pda/scripts/adapter.md` — How to translate PDA artifacts into Spec Kit inputs.
+- `docs/pda-solution-brief.md` — Solution Brief (business decisions only). Source of truth for the solution.
+- `docs/pda-context-spec.md` — Context Specification (technical decisions). Generated in Phase 3.
+- `.claude/agents/pda-*.md` — The 4 PDA agents for Claude Code.
+- `.github/prompts/pda-*.md` — The 4 PDA agents for GitHub Copilot.
+- `.cursor/rules/pda-*.mdc` — The 4 PDA agents for Cursor.
+- `templates/` — Empty templates for PS, SB, and Context Spec.
 
 ## Rules / Reglas
 
 1. **Never invent.** If information is insufficient, flag it. Do not fill gaps with assumptions.
-2. **Traceability is mandatory.** Every spec, plan, and task must trace to Solution Brief → Problem Statement.
-3. **Only humans modify PDA artifacts.** Agents verify but never edit the PS or SB.
-4. **Constitution reflects PDA decisions.** `.specify/memory/constitution.md` is generated from the Solution Brief.
-5. **Verify after every Spec Kit step.** Run PDA verification after `/speckit.specify`, `/speckit.plan`, `/speckit.tasks`.
-
-## Workflow
-
-```
-1. Fill docs/pda-problem.md       → /pda.validate-problem    → Gate 1
-2. Fill docs/pda-solution-brief.md → /pda.validate-solution   → Gate 2
-3. /pda.adapt-constitution → /speckit.specify → /pda.verify-specify
-4. /speckit.plan → /pda.verify-plan
-5. /speckit.tasks → /pda.verify-tasks
-6. /speckit.implement → /pda.verify-build
-```
+2. **Traceability is mandatory.** Every artifact must trace to Solution Brief → Problem Statement → Evidence.
+3. **Only humans modify PDA artifacts.** Agents generate drafts and verify, but humans approve.
+4. **SB = business decisions. Context Spec = technical decisions.** Never mix them.
+5. **Verify at every gate.** Each agent validates before asking for human approval.
 
 ## Evidence Weighting / Ponderación de evidencia
 

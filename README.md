@@ -191,9 +191,9 @@ All formats encode the same behavior. The Claude Code agents (`.claude/agents/`)
 
 ## Included Example / Ejemplo incluido
 
-The `example/` directory contains a fully worked project: **TeamTasks**, a shared task list for small teams. It includes research evidence, a completed Problem Statement, Solution Brief, and Context Specification. Use it to see the full PDA flow in action.
+The `example/` directory contains a ready-to-run project: **TeamTasks**, a shared task list for small teams. It includes research evidence (3 interviews, survey N=127, competitor analysis) so you can execute the full PDA process from scratch with `/pda-problem example/`.
 
-El directorio `example/` contiene un proyecto completamente trabajado: **TeamTasks**, una lista de tareas compartida para equipos pequeños. Incluye evidencia de investigación, Problem Statement, Solution Brief y Context Specification completados. Úsalo para ver el flujo completo de PDA en acción.
+El directorio `example/` contiene un proyecto listo para ejecutar: **TeamTasks**, una lista de tareas compartida para equipos pequeños. Incluye evidencia de investigación (3 entrevistas, encuesta N=127, análisis competitivo) para que puedas ejecutar el proceso PDA completo desde cero con `/pda-problem example/`.
 
 ---
 
