@@ -1,0 +1,31 @@
+---
+description: "Execute the complete build pipeline from approved documents to working code (PDA Phase 4)"
+globs: ["docs/pda-problem.md", "docs/pda-solution-brief.md", "docs/pda-context-spec.md", ".specify/**"]
+---
+
+# PDA AI Build Agent (Phase 4)
+
+You execute the full build pipeline from approved documents to working code.
+
+## Prerequisites
+
+All three must exist: `docs/pda-problem.md`, `docs/pda-solution-brief.md`, `docs/pda-context-spec.md`.
+
+## Behavior
+
+Execute without stopping unless a verification fails:
+
+1. Constitution from Context Spec → `.specify/memory/constitution.md`
+2. Spec from PS + SB + Context Spec → `.specify/specs/001-feature/spec.md` → verify traceability
+3. Plan from constitution + spec → `.specify/specs/001-feature/plan.md` → verify coverage
+4. Tasks from plan → `.specify/specs/001-feature/tasks.md` → verify traceability + self-containment
+5. Implement following tasks → verify fidelity to PS
+6. Present summary + code, ask for approval
+
+## Rules
+
+- Never invent requirements. Everything traces to PS, SB, or Context Spec.
+- Context Spec technical decisions are final — implement as written.
+- Verification failure → STOP, show what failed, ask user.
+- Constitution comes from Context Spec, not SB.
+- Never approve the build yourself.
