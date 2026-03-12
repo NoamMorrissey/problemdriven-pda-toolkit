@@ -1,7 +1,5 @@
 # Problem Statement — Shared Task Visibility for Small Teams
 
-> **Formatted version for humans:** https://docs.google.com/document/d/1Y8eqTz0Ra8-kzm4p6SPzerZGqr3XbUuu/edit
-
 **Status:** APPROVED
 **Version:** 1.0
 **Last updated:** 2026-02-20
@@ -42,7 +40,7 @@ The expected state is that every task, its owner, and its deadline are visible t
 | Task creation speed | Time to create and assign a task | 2-5 minutes (message + context, E-006) | Under 15 seconds |
 | Forgotten tasks | Frequency of forgotten/lost tasks per week | 53% report weekly (E-003) | Under 10% report weekly |
 | Coordination overhead | Daily time spent manually checking task status | ~20 min median (E-007) | Under 5 minutes |
-| Tool adoption | Consistent usage after 2 weeks | 47% abandon dedicated tools (E-008) | 80% still using after 2 weeks |
+| Tool adoption | Consistent usage after 2 weeks | 53% abandon dedicated tools (E-008) | 80% still using after 2 weeks |
 
 **Evidence:**
 - [E-006] User interviews 01-03, 1st-hand behavioral, 2026-02 → Observed task assignment via Slack/WhatsApp takes 2-5 minutes including context-switching and searching for the right conversation.
@@ -58,7 +56,7 @@ The expected state is that every task, its owner, and its deadline are visible t
 | Tasks are forgotten | Assignments happen inside ephemeral channels (chat, verbal) with no persistent shared record | [E-001] Maria: task buried under 200 messages. [E-002] Priya: decisions live in Slack, nobody logs them. |
 | Duplicate work happens | No single source of truth for who is working on what. Each person has partial visibility. | [E-001] Maria: two designers on same icon set. [E-003] 38% report duplicate work monthly. |
 | Status is unknown | The only way to know task status is to ask the person directly. No passive visibility mechanism. | [E-005] James: spends 20 min/day manually polling subcontractors via WhatsApp. |
-| Tools are abandoned | Existing tools are designed for larger teams. Setup, learning curve, and maintenance overhead exceed perceived value for 2-8 person teams. | [E-008] 53% tried and abandoned. [E-009] Top reason: "too complex for our team size" (58%). |
+| Tools are abandoned | Existing tools are designed for larger teams. Setup, learning curve, and maintenance overhead exceed perceived value for 2-8 person teams. | [E-008] 53% tried and abandoned. [E-008] Top reason: "too complex for our team size" (58%). |
 
 ---
 
@@ -91,7 +89,7 @@ None of these alternatives provide shared visibility with near-zero maintenance 
 - The solution must work for teams where not everyone is technically skilled. [E-004] Industry spread includes creative, consulting, marketing — not just tech.
 
 **Organizational:**
-- Team members may resist adding another tool. Adoption must require less than 2 minutes of onboarding. [E-009] Survey: "Onboarding took too long" cited by 27% who abandoned tools.
+- Team members may resist adding another tool. Adoption must require less than 2 minutes of onboarding. [E-008] Survey: "Onboarding took too long" cited by 27% who abandoned tools.
 
 **Evidence:**
 - [E-009] Survey open-ended responses, 1st-hand qualitative, 2026-02-05 → Coded themes on what would make a tool useful.
