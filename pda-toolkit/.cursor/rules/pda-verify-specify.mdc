@@ -1,0 +1,35 @@
+---
+description: PDA verify specify
+globs:
+alwaysApply: false
+---
+
+Activate as pda-problem-validator (Phase 3 mode: R6 + skill-traceability-qa).
+
+Read: `docs/pda-problem.md`, `docs/pda-solution-brief.md`, and the most recent `spec.md` in `.specify/specs/`.
+
+Execute skill-traceability-qa:
+1. Each user story traces to an SB component → PS element?
+2. Acceptance criteria consistent with PS success criteria?
+3. Scope outside PS element 8 boundaries?
+4. SB components missing from spec?
+
+Write report to `pda-verification/verify-specify.md`:
+
+```
+## Spec Verification Report
+Date: [today]  |  PS: [version]  |  SB: [version]
+
+### Traceability
+| Spec Element | SB Component | PS Element | Status |
+|---|---|---|---|
+
+### Scope Violations
+- [list or "None"]
+
+### Coverage Gaps
+- [list or "Full coverage"]
+
+### Verdict: PASS / FAIL
+### Blocking issues: [list]
+```
