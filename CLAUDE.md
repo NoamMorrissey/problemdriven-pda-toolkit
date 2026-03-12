@@ -1,16 +1,12 @@
 # Problem-Driven AI (PDA) Toolkit — Project Instructions
 
-## What This Project Is / Qué es este proyecto
+## What This Project Is
 
-This is the Problem-Driven AI (PDA) Toolkit — an open-source framework that connects human problem-solving with AI-assisted code generation. PDA ensures that everything built traces back to a validated problem.
+This is the PDA Toolkit — an open-source framework that connects human problem-solving with AI-assisted code generation. PDA ensures that everything built traces back to a validated problem.
 
-Este es el PDA Toolkit — un framework open-source que conecta la resolución humana de problemas con generación de código asistida por IA. PDA garantiza que todo lo construido tiene trazabilidad a un problema validado.
-
-## Core Principle / Principio central
+## Core Principle
 
 The AI builds. Humans think. When the AI starts building, it should not need to make any important decision. Only execute.
-
-La IA construye. Los humanos piensan. Cuando la IA empieza a construir, no debería necesitar tomar ninguna decisión importante. Solo ejecutar.
 
 ## 4 Phases, 4 Agents, 4 Gates
 
@@ -21,7 +17,9 @@ La IA construye. Los humanos piensan. Cuando la IA empieza a construir, no deber
 | 3. Context | `/pda-context` | Approved PS + SB | `docs/pda-context-spec.md` | Human approves Context Spec |
 | 4. AI Build | `/pda-ai-build` | PS + SB + Context Spec | Working code in `src/` | Human approves build |
 
-## Key Files / Archivos clave
+All agents accept an optional base path argument (e.g., `/pda-ai-build example/`). Default base directory is the project root.
+
+## Key Files
 
 - `docs/pda-problem.md` — Problem Statement (9 elements). Source of truth for the problem.
 - `docs/pda-solution-brief.md` — Solution Brief (business decisions only). Source of truth for the solution.
@@ -31,7 +29,7 @@ La IA construye. Los humanos piensan. Cuando la IA empieza a construir, no deber
 - `.cursor/rules/pda-*.mdc` — The 4 PDA agents for Cursor.
 - `templates/` — Empty templates for PS, SB, and Context Spec.
 
-## Rules / Reglas
+## Rules
 
 1. **Never invent.** If information is insufficient, flag it. Do not fill gaps with assumptions.
 2. **Traceability is mandatory.** Every artifact must trace to Solution Brief → Problem Statement → Evidence.
@@ -39,7 +37,7 @@ La IA construye. Los humanos piensan. Cuando la IA empieza a construir, no deber
 4. **SB = business decisions. Context Spec = technical decisions.** Never mix them.
 5. **Verify at every gate.** Each agent validates before asking for human approval.
 
-## Evidence Weighting / Ponderación de evidencia
+## Evidence Weighting
 
 When evidence conflicts, apply this hierarchy:
 1. Behavioral > declared
