@@ -52,9 +52,10 @@ The research documents are also available in a NotebookLM for AI agent verificat
 
 **NotebookLM link:** https://notebooklm.google.com/notebook/b4da2d9c-5f80-49f4-ba1f-123977952dd6
 
-## Human-Readable Documents
+## Reference Documents (Google Docs)
 
-Formatted versions of the PDA artifacts for non-technical readers:
+The same documents that live in `example/docs/` as markdown files are also available as editable Google Docs for reference:
 
-- **Problem Statement:** https://docs.google.com/document/d/1Y8eqTz0Ra8-kzm4p6SPzerZGqr3XbUuu/edit
-- **Solution Brief:** https://docs.google.com/document/d/1-Gxw2TIrU7FmiKM4jDJBAyRAeMU26jdu/edit
+- **Problem Statement:** https://docs.google.com/document/d/1H1z7gSJiWOhQwOr7u6XmoFFtSbS_wZm8/edit
+- **Solution Brief:** https://docs.google.com/document/d/1Y7aiZH-INSYB-vPSAF_KD3Cjq3mdUXCj/edit
+- **Context Specification:** https://docs.google.com/document/d/1Z0Kvot2_LQTr4U02lZslJJHHnGQ0oyGQ/edit
