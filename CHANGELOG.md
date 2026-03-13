@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/NoamMorrissey/problemdriven-pda-toolkit/compare/v0.2.0...v0.2.1) (2026-03-13)
+
+
+### Maintenance
+
+* configure release-please for automated versioning ([625b0e6](https://github.com/NoamMorrissey/problemdriven-pda-toolkit/commit/625b0e63fa455c2f78015288f53a1ae8b96535e9))
+
 ## [0.2.0](https://github.com/NoamMorrissey/problemdriven-pda-toolkit/releases/tag/v0.2.0) — Beta 0.2
 
 Initial public release of the PDA Toolkit.
