@@ -110,6 +110,8 @@ See [docs/EXAMPLE.md](docs/EXAMPLE.md) for a full walkthrough.
 - [Methodology](docs/METHODOLOGY.md) — The Problem-Driven AI framework
 - [problemdriven.ai](https://problemdriven.ai) — Full methodology reference
 
+See [CHANGELOG.md](CHANGELOG.md) for version history.
+
 ---
 
 ## Roadmap
